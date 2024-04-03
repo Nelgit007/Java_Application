@@ -16,5 +16,15 @@ pipeline{
             )
             }
         }
+        stage('Unit test using maven'){
+
+            steps{
+                script{
+                    mvnTest()
+                }
+            
+            )
+            }
+        }
     }
 }
