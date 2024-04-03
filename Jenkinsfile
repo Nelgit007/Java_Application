@@ -11,7 +11,7 @@ pipeline{
             steps{
             gitCheckout(
 
-                branch: "main"
+                branch: "main",
                 url: "https://github.com/Nelgit007/Java_Application.git"
             )
             }
