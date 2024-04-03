@@ -1,4 +1,4 @@
-@Lirary('Jenkins_Shared_Library') _
+@Library('Jenkins_Shared_Library') _
 
 pipeline{
 
@@ -9,15 +9,11 @@ pipeline{
         stage('Git Checkout'){
 
             steps{
+            gitCheckout(
 
-                script{
-
-                    gitCheckout(
-
-                        branch: "main"
-                        url: "https://github.com/Nelgit007/Java_Application.git"
-                    )
-                }
+                branch: "main"
+                url: "https://github.com/Nelgit007/Java_Application.git"
+            )
             }
         }
     }
