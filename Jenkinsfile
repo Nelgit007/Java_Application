@@ -20,11 +20,10 @@ pipeline{
 
             steps{
                 script{
-                    
+
                     mvnTest()
                 }
-            
-            )
+        
             }
         }
     }
