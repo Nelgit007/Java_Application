@@ -54,7 +54,7 @@ pipeline{
                     // to fetch cred from jenkins, def var
                     def SonarCredId = 'sonar-api'
 
-                    staticCodeAnalysis(credentialsId)
+                    staticCodeAnalysis(SonarCredId)
                 }
         
             }
