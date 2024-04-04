@@ -23,6 +23,17 @@ pipeline{
             )
             }
         }
+        stage('Clean work space: Befre build'){
+
+            //when { expression {  params.action == 'create' } }
+            steps{
+                script{
+
+                    cleanWs()
+                }
+        
+            }
+        }
         // stage('Unit test using maven'){
 
         //     when { expression {  params.action == 'create' } }
