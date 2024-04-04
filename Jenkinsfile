@@ -16,16 +16,16 @@ pipeline{
             )
             }
         }
-        // stage('Unit test using maven'){
+        stage('Unit test using maven'){
 
-        //     steps{
-        //         script{
+            steps{
+                script{
 
-        //             mvnTest()
-        //         }
+                    mvnTest()
+                }
         
-        //     }
-        // }
+            }
+        }
         stage('Integration test using maven'){
 
             steps{
