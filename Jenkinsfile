@@ -13,6 +13,8 @@ pipeline{
         
         stage('Git Checkout'){
 
+            when { expression {  params.action == 'create' } }
+
             steps{
             gitCheckout(
 
@@ -43,5 +45,19 @@ pipeline{
         
         //     }
         // }
+        stage('Static code analysis: Sonarqube'){
+
+            when { expression {  params.action == 'create' } }
+            steps{
+                script{
+
+                    // to fetch cred from jenkins, def var
+                    def SonarCredId = 'sonar-api'
+
+                    staticCodeAnalysis(credentialsId)
+                }
+        
+            }
+        }
     }
 }
