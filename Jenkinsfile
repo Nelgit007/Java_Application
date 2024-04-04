@@ -23,39 +23,39 @@ pipeline{
             )
             }
         }
-        stage('Clean work space: Befre build'){
+        // stage('Clean work space: Befre build'){
 
-            //when { expression {  params.action == 'create' } }
+        //     //when { expression {  params.action == 'create' } }
+        //     steps{
+        //         script{
+
+        //             cleanWs()
+        //         }
+        
+        //     }
+        // }
+        stage('Unit test using maven'){
+
+            when { expression {  params.action == 'create' } }
             steps{
                 script{
 
-                    cleanWs()
+                    mvnTest()
                 }
         
             }
         }
-        // stage('Unit test using maven'){
+        stage('Integration test using maven'){
 
-        //     when { expression {  params.action == 'create' } }
-        //     steps{
-        //         script{
+            when { expression {  params.action == 'create' } }
+            steps{
+                script{
 
-        //             mvnTest()
-        //         }
+                    mvnIntegrationTest()
+                }
         
-        //     }
-        // }
-        // stage('Integration test using maven'){
-
-        //     when { expression {  params.action == 'create' } }
-        //     steps{
-        //         script{
-
-        //             mvnIntegrationTest()
-        //         }
-        
-        //     }
-        // }
+            }
+        }
         stage('Static code analysis: Sonarqube'){
 
             //when { expression {  params.action == 'create' } }
