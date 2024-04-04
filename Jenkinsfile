@@ -13,7 +13,7 @@ pipeline{
         
         stage('Git Checkout'){
 
-            when { expression {  params.action == 'create' } }
+            //when { expression {  params.action == 'create' } }
 
             steps{
             gitCheckout(
@@ -47,7 +47,7 @@ pipeline{
         // }
         stage('Static code analysis: Sonarqube'){
 
-            when { expression {  params.action == 'create' } }
+            //when { expression {  params.action == 'create' } }
             steps{
                 script{
 
